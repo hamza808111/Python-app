@@ -1,0 +1,13 @@
+{
+  "name": "openshift-node-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Minimal Node.js app for OpenShift S2I",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
