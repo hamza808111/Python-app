@@ -16,12 +16,18 @@
       <h1>✅ OpenShift Node.js Demo</h1>
       <p>This page is served from a Node.js app on OpenShift (S2I).</p>
       <button id="ping">Ping API</button>
+      <button id="info">App Info</button>
       <button id="openshift">Visit OpenShift</button>
       <div id="out"></div>
     </div>
     <script>
       document.getElementById("ping").addEventListener("click", async () => {
         const r = await fetch("/api/ping");
+        const j = await r.json();
+        document.getElementById("out").textContent = JSON.stringify(j, null, 2);
+      });
+      document.getElementById("info").addEventListener("click", async () => {
+        const r = await fetch("/api/info");
         const j = await r.json();
         document.getElementById("out").textContent = JSON.stringify(j, null, 2);
       });
