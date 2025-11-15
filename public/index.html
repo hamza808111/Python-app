@@ -17,6 +17,7 @@
       <p>This page is served from a Node.js app on OpenShift (S2I).</p>
       <button id="ping">Button1</button>
       <button id="info">App Info</button>
+      <button id="button2">Button2</button>
       <div id="out"></div>
     </div>
     <script>
@@ -29,6 +30,9 @@
         const r = await fetch("/api/info");
         const j = await r.json();
         document.getElementById("out").textContent = JSON.stringify(j, null, 2);
+      });
+      document.getElementById("button2").addEventListener("click", () => {
+        document.getElementById("out").textContent = "Button2 clicked";
       });
     </script>
   </body>
